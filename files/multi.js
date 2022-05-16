@@ -249,7 +249,7 @@ function parseURL(URL){
 				break;
 				default:
 					stream_name = parser.pathname.split("/")[1];
-					stream_address = "http://player.twitch.tv/?muted=true&channel=" + stream_name + "&parent=" + domain_name;
+					stream_address = "https://player.twitch.tv/?muted=true&channel=" + stream_name + "&parent=" + domain_name;
 					stream_thumbnail = 'https://static-cdn.jtvnw.net/previews-ttv/live_user_' + stream_name + '-320x180.jpg';
 				break;
 			}
@@ -260,7 +260,7 @@ function parseURL(URL){
 			for (i = 0; i < arguments.length; i++){
 				if (arguments[i].split("=")[0] == "channel") {
 					stream_name = arguments[i].split("=")[1];
-					stream_address = "http://player.twitch.tv/?muted=true&channel=" + stream_name + "&parent=" + domain_name;
+					stream_address = "https://player.twitch.tv/?muted=true&channel=" + stream_name + "&parent=" + domain_name;
 					stream_thumbnail = 'https://static-cdn.jtvnw.net/previews-ttv/live_user_' + stream_name + '-320x180.jpg';
 				}
 				else if (arguments[i].split("=")[0] == "video") {
@@ -274,7 +274,7 @@ function parseURL(URL){
 			host_name = "twitch";
 			var temp = parser.pathname.split("/")[2]
 			stream_name = temp.substr(10, temp.length-22)
-			stream_address = "http://player.twitch.tv/?muted=true&channel=" + stream_name;
+			stream_address = "https://player.twitch.tv/?muted=true&channel=" + stream_name;
 			stream_thumbnail = 'https://static-cdn.jtvnw.net/previews-ttv/live_user_' + stream_name + '-320x180.jpg';
 		break;
 		
@@ -554,7 +554,7 @@ var youtube_error_code = {
 }
 
 var script = document.createElement("script");
-script.src = "http://www.youtube.com/player_api";
+script.src = "https://www.youtube.com/player_api";
 document.getElementsByTagName("head")[0].appendChild(script)
 
 function updateStreams(){
