@@ -1,0 +1,139 @@
+body {
+    background: black;
+    font: 13px arial, sans-serif;
+    margin: 8px;
+    color: white;
+}
+
+a {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.stream_check, .option_check, .video_thumb {
+	cursor: pointer;
+}
+
+#streams {
+    text-align: center;
+    float: left;
+    margin: 0;
+    margin-right: -100px;
+    padding: 0;
+}
+
+iframe {
+    border:0 none;
+}
+
+#bottom_right_bar {
+    height: 1em;
+    position: absolute;
+    right: 8px;
+    bottom: 12px;
+}
+
+#top_right_bar {
+    height: 1em;
+    position: absolute;
+    right: 8px;
+    top: 12px;
+}
+
+.optionbox {
+    z-index: 5;
+    display: none;
+    background: rgba(0,0,0,0.65);
+    padding: 5px;
+    margin: 0 auto;
+    border: 2px solid white;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    position: absolute;
+}
+
+#stream_input {
+    width: 250px;
+	resize: none;
+	white-space: nowrap;
+	overflow: auto;
+}
+
+.fullwidth {
+    width: 100%;
+}
+
+.centering {
+    text-align: center;
+}
+
+.clear {
+    clear: both;
+}
+
+.hidden {
+	display: none;	
+}
+
+.video_thumb {
+	width:160px;
+	height:90px;
+}
+
+.user_thumb {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:48px;
+	height:48px;
+	border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border:2px solid black;
+}
+
+.remove_stream_button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 16px;
+	width:16px;
+	height:16px;
+	color: white;
+	background-color: red;
+	text-align: center;
+	cursor: default;
+	border:2px solid black;
+}
+
+.inline {
+	display: inline-block;
+	position: relative;
+}
+
+.slider {
+  width: 100%; /* Full-width */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider::-webkit-slider-thumb { /* slider handle (Chrome, Opera, Safari, Edge) */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb { /* slider handle (Firefox) */
+  cursor: pointer; /* Cursor on hover */
+}
+
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+

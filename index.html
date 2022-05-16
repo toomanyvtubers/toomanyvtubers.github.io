@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Too Many Vtubers</title>
+<link rel="stylesheet" type="text/css" href="files/multi.css" />
+<link rel="icon" href="files/multi.ico" />
+<script type="text/javascript" src="files/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="files/multi.js"></script>
+</head>
+<body>
+<div id="wrapper">
+<div id="streams"></div>
+
+<div id="change_streams" class="optionbox centering">
+	Active Streams (<span id="active_stream_num">0</span>)
+    <div id="stream_thumbnails"></div>
+	<hr />
+	Queued Streams (<span id="hidden_stream_num">0</span>)
+    <div id="hidden_stream_thumbnails"></div>
+	<hr />
+	Add Streams<br />
+    <textarea id="stream_input" rows="1" placeholder="Put URLs here..." oninput='update_scroll_height();absolute_center($("#change_streams"));'></textarea>
+    <div class="fullwidth">
+    <button type="button" onclick="update_streams();">Apply Changes</button>
+    <button type="button" onclick="show_streams_window();">Cancel</button>
+    <button type="button" onclick="export_streams();">Export stream list</button>
+    <div class="clear"></div>
+    </div>
+</div>
+
+<div id="notifications_window" class="optionbox">
+	<div id="option_default_volume">Default volume: <span id="option_default_volume_num">100</span>
+	<br /><input type="range" min="0" max="100" value="100" class="slider" id="option_default_volume_slider"></div>
+	<div id="option_remove_complete"><input type="checkbox" class="option_check" id="option_remove_complete_check" /><label for="option_remove_complete_check"> Remove video when stream ends</label></div>
+	<div id="option_notification_queued"><input type="checkbox" class="option_check" id="option_notification_queued_check" /><label for="option_notification_queued_check"> Notify when stream is queued</label></div>
+	<div id="option_notification_start"><input type="checkbox" class="option_check" id="option_notification_start_check" /><label for="option_notification_start_check"> Notify when stream starts</label></div>
+	<div id="option_notification_end"><input type="checkbox" class="option_check" checked=true id="option_notification_end_check" /><label for="option_notification_end_check"> Notify when stream ends</label></div>
+	<div id="option_notification_error"><input type="checkbox" class="option_check" checked=true id="option_notification_error_check" /><label for="option_notification_error_check"> Notify when error occurs</label></div>
+	<div id="option_separate_organizations"><input type="checkbox" class="option_check" checked=true id="option_separate_organizations_check" /><label for="option_notification_error_check"> Separate streams by organization</label></div>
+	<hr />
+    <div class="fullwidth">
+    <button type="button" onclick="clearNotifications();">Clear notifications</button>
+    <button type="button" onclick="showWindow('#notifications_window');">Close</button>
+    <div class="clear"></div>
+    </div>
+	<div id="notifications"></div>
+</div>
+
+
+<div id="live_window" class="optionbox centering">
+	<button type="button" onclick="showWindow('#live_window');">Close</button>
+	<button type="button" onclick="updateStreams();">Load streams</button>
+	<button type="button" onclick="$('#live_streams').html('');absolute_center($('#live_window'));">Clear</button>
+	<br />
+	<div id="live_streams"></div>
+
+	<hr />
+	<button type="button" onclick="showWindow('#live_window');">Close</button>
+</div>
+
+
+<div id="top_right_bar">
+	<a onclick="showWindow('#notifications_window');">&#x1f514;(<span id="notification_num">0</span>)</a>
+</div>
+
+<div id="bottom_right_bar">
+	<a onclick="show_streams_window();">Streams (<span id="total_stream_num">0</span>)</a> | 
+	<a onclick="showWindow('#live_window');">Search</a>
+</div>
+
+</div>
+</body>
+</html>
